@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            margin-bottom: 20px;
+        }
+
+        div label {
+            font-size: 25px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background: gray;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <form>
+        <div>
+            <label for="a">Enter a: </label>
+            <input type="text" id="a">
+        </div>
+        <div>
+            <label for="b">Enter b: </label>
+            <input type="text" id="b">
+        </div>
+        <div>
+            <label for="x">Enter x: </label>
+            <input type="text" id="x">
+        </div>
+        <div>
+            <label style="margin-right: 58px;" for="y">y: </label>
+            <input type="text" id="y">
+        </div>
+        <div>
+            <label style="margin-right: 55px;" for="w">w: </label>
+            <input type="text" id="w">
+        </div>
+        <button type="button" onclick="calculate()">Calculate</button>
+    </form>
+
+    <script>
+        const calculate = () => {
+            const a = document.getElementById("a").value;
+            const b = document.getElementById("b").value;
+            const x = document.getElementById("x").value;
+
+            const y = (a * x + Math.E * Math.cos(b) * x) / (b * x - Math.E ^ (-x) * Math.sin(b) * x + 1);
+
+            const w = y * Math.pow(Math.E, 2) * Math.log10(a + x) - Math.pow(b, 2 * x) * Math.log10(b - x);
+
+            document.getElementById("y").value = y;
+            document.getElementById("w").value = w;
+        }
+    </script>
+</body>
+
+</html>

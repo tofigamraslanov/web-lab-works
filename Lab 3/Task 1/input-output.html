@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background: gray;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button type="button" onclick="calculate()">Calculate</button>
+
+    <script>
+        const calculate = () => {
+            const a = prompt("Enter a");
+            const b = prompt("Enter b");
+            const x = prompt("Enter x");
+
+            const y = (a * x + Math.E * Math.cos(b) * x) / (b * x - Math.E ^ (-x) * Math.sin(b) * x + 1);
+
+            const w = y * Math.pow(Math.E, 2 * x) * Math.log10(a + x) - Math.pow(b, 2 * x) * Math.log10(b - x);
+
+            alert(y);
+            alert(w);
+        }
+    </script>
+</body>
+
+</html>
