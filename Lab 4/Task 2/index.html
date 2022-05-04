@@ -5,30 +5,72 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lab 4 - Task 2</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+        div {
+            margin-bottom: 20px;
+        }
 
-    <script defer src="script.js"></script>
+        div label {
+            font-size: 25px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin-top: 10px;
+            background: gray;
+            border: none;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="question">
-            <h1 class="question-title"></h1>
+    <form>
+        <div>
+            <label for="a">Enter a: </label>
+            <input type="text" id="a">
         </div>
-
-        <div class="answers">
-            <div class="answer"></div>
-            <div class="answer"></div>
-            <div class="answer"></div>
+        <div>
+            <label for="b">Enter b: </label>
+            <input type="text" id="b">
         </div>
-    </div>
+        <div>
+            <label for="c">Enter c: </label>
+            <input type="text" id="c">
+        </div>
+        <div>
+            <label for="t">Enter t: </label>
+            <input type="text" id="t">
+        </div>
+        <div>
+            <label style="margin-right:55px;" for="y">y: </label>
+            <input type="text" id="y">
+        </div>
+        <button type="button" onclick="calculate()">Calculate</button>
+    </form>
 
-    <button type="submit" id="submit">Submit Quiz</button>
+    <script>
+        const calculate = () => {
+            const a = document.getElementById("a").value;
+            const b = document.getElementById("b").value;
+            const c = document.getElementById("c").value;
+            const t = document.getElementById("t").value;
+            let y;
 
-    <div class="result">
-        <span id="numberOfCorrectAnswers"></span> out of 3
-    </div>
+            if (t <= 4) {
+                y = a / t + b * Math.pow(t, 2) + c;
+            }
+            else if (t > 4 && t < 6) {
+                y = t;
+            } else {
+                y = a * t + b * Math.pow(t, 2);
+            }
+
+            document.getElementById("y").value = y;
+        }
+    </script>
 </body>
 
 </html>
