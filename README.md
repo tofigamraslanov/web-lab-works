@@ -1,1 +1,1 @@
-# ASOIU - Web Labarotary Works
+# ASOIU - Web Laboratory Works
